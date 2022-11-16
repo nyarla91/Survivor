@@ -14,12 +14,11 @@ namespace Extentions
         public T[] GetContent<T>() where T : Component
             => GetContent<T>(int.MaxValue);
         
-        public T[] GetContent<T>(LayerMask layerMask) where T : Component
-        {
-            Collider2D[] colliders =
-                _colliders.Where(c => layerMask == (layerMask | (1 << c.gameObject.layer)) && c.gameObject.activeInHierarchy).ToArray();
-            return colliders.Select(collider => collider.GetComponent<T>()).ToArray();
-        }
+        public T[] GetContent<T>(LayerMask layerMask) where T : Component =>
+            _colliders
+                .Where(c => layerMask == (layerMask | (1 << c.gameObject.layer)) && c.gameObject.activeInHierarchy)
+                .Where(c => c.GetComponent<T>() != null)
+                .Select(c => c.GetComponent<T>()).ToArray();
 
         private void OnTriggerEnter2D(Collider2D other)
         {
