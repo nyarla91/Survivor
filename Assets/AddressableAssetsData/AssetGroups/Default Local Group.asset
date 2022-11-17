@@ -17,8 +17,16 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6cff1bf6bc5673d45bb1756d3294f547
   m_SerializeEntries:
-  - m_GUID: 057e447d791585c4584e11cc41ca9d36
-    m_Address: Gameplay/Projectile/DefaultPorjectile
+  - m_GUID: 5f73f9ce473cf3a4bb4ea88fd509e077
+    m_Address: Gameplay/Enemies/Default
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 496e99df95d41e8428d507a1e337d753
+    m_Address: Gameplay/Enemy/Drake
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 270e57d72fd77a847938cec19229aa97
+    m_Address: Gameplay/Enemy/Skeleton
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

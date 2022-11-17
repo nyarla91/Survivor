@@ -48,7 +48,7 @@ namespace Extentions
         public static Vector2 DirectionTo2D(this Transform transform, Vector2 target) => (target - (Vector2) transform.position).normalized;
         public static Vector2 DirectionTo2D(this Transform transform, Transform target) => transform.DirectionTo2D(target.position);
 
-        public static async Task WaitForCondition<T>(T original, Func<T, bool> condition, int checkPeriod)
+        public static async Task WaitForCondition<T>(this T original, Func<T, bool> condition, int checkPeriod)
         {
             while (!condition.Invoke(original))
             {

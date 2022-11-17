@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Obstacle
+  - Nothing
   - Water
   - UI
   - Player
@@ -16,7 +16,7 @@ TagManager:
   - PlayerEntity
   - EnemyEntity
   - NeutralEntity
-  - 
+  - Obstacle
   - 
   - 
   - 

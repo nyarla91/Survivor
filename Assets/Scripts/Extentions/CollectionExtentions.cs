@@ -135,5 +135,11 @@ namespace Extentions
             list.Remove(element);
             return true;
         }
+
+        public static void Foreach<T>(this IEnumerable<T> collection, Action<T> action)
+        {
+            foreach (T element in collection)
+                action.Invoke(element);
+        }
     }
 }

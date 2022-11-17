@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Extentions
@@ -68,6 +69,17 @@ namespace Extentions
             
             _container.StopCoroutine(_tickingCoroutine);
             _tickingCoroutine = null;
+        }
+
+        public async Task Await()
+        {
+            bool expired = false;
+            OnExpire += Expire;
+            while (!expired)
+                await Task.Delay(20);
+            OnExpire -= Expire;
+
+            void Expire() => expired = true;
         }
 
         private void Init()

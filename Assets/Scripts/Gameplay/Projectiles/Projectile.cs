@@ -1,4 +1,4 @@
-﻿using Factory;
+﻿using Extentions.Factory;
 using Gameplay.Infrastrucure;
 using Gameplay.Units;
 using UnityEngine;
@@ -78,13 +78,13 @@ namespace Gameplay.Projectiles
                 return;
             
             hitbox.TakeHit(_hit);
-            Disable();
+            PoolDisable();
         }
 
-        public override void Disable()
+        public override void PoolDisable()
         {
             Velocity = Vector2.zero;
-            base.Disable();
+            base.PoolDisable();
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Factory;
 using UnityEngine;
 using Zenject;
 
@@ -13,7 +12,6 @@ namespace Extentions.Factory
         
         [Inject] private ContainerFactory ContainerFactory { get; set; }
 
-        
         public void DisableObject(PooledObject objectToRemove)
         {
             objectToRemove.gameObject.SetActive(false);
@@ -43,7 +41,7 @@ namespace Extentions.Factory
 
         private T InstantiatePrefab<T>(Vector3 position, GameObject prefab, Transform parent, string tag) where T : PooledObject
         {
-            T newObject = ContainerFactory.Instantiate<T>(prefab, parent);
+            T newObject = ContainerFactory.Instantiate<T>(prefab, position, parent);
             newObject.Transform.position = position;
             newObject.Transform.parent = parent;
             newObject.PoolInit(this);

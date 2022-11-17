@@ -15,8 +15,8 @@ MonoBehaviour:
   <Sprite>k__BackingField: {fileID: 0}
   <Name>k__BackingField: 
   <Description>k__BackingField: 
-  <AttackRange>k__BackingField: 1
-  <AttackPeriod>k__BackingField: 1
+  <AttackRange>k__BackingField: 5
+  <AttackPeriod>k__BackingField: 0.3
   <DamagePerAttack>k__BackingField: 2
   <ProjectilesPerShot>k__BackingField: 1
   <SpreadAngle>k__BackingField: 0

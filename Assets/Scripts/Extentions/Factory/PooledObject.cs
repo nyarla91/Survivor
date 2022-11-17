@@ -1,8 +1,6 @@
 ﻿using System;
-using Extentions;
-using Extentions.Factory;
 
-namespace Factory
+namespace Extentions.Factory
 {
     public class PooledObject : Transformable
     {
@@ -15,7 +13,7 @@ namespace Factory
             _factory = factory;
         }
         
-        public virtual void Disable()
+        public virtual void PoolDisable()
         {
             OnPoolDisable?.Invoke(this);
             if (_factory != null)

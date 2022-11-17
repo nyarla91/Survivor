@@ -18,5 +18,5 @@ MonoBehaviour:
   <AttackRange>k__BackingField: 2
   <AttackPeriod>k__BackingField: 0.5
   <DamagePerAttack>k__BackingField: 5
-  <AttackSplash>k__BackingField: 0
+  <AttackSplash>k__BackingField: 2
   <SplashDamageModifier>k__BackingField: 0.5

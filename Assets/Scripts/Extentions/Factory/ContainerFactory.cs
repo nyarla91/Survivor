@@ -11,10 +11,7 @@ namespace Extentions.Factory
             Container.Bind<ContainerFactory>().FromInstance(this).AsSingle();
         }
 
-        public T Instantiate<T>(GameObject prefab, Transform parent) where T : Component
-            => Instantiate(prefab, parent).GetComponent<T>();
-        
-        public GameObject Instantiate(GameObject prefab, Transform parent) 
-            => Container.InstantiatePrefab(prefab, parent);
+        public T Instantiate<T>(GameObject prefab, Vector3 position, Transform parent = null) where T : Component
+            => Container.InstantiatePrefab(prefab, position, Quaternion.identity, parent).GetComponent<T>();
     }
 }
