@@ -13,6 +13,8 @@ namespace Extentions.Factory
             _factory = factory;
         }
         
+        public virtual void Reset() { }
+
         public virtual void PoolDisable()
         {
             OnPoolDisable?.Invoke(this);

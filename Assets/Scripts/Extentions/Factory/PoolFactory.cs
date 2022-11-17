@@ -34,6 +34,7 @@ namespace Extentions.Factory
                 newObject.gameObject.SetActive(true);
                 newObject.Transform.position = position;
                 newObject.Transform.SetParent(parent);
+                newObject.Reset();
                 return newObject;
             }
             return InstantiatePrefab<T>(position, prefab, parent, tag);

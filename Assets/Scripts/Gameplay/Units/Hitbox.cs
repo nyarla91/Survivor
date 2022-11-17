@@ -6,19 +6,19 @@ namespace Gameplay.Units
 {
     public class Hitbox : Transformable
     {
-        private HealthPool _healthPool;
+        private VitalsPool _vitalsPool;
 
         public event Action<Hit> OnHitTake;
         
         public void TakeHit(Hit hit)
         {
-            _healthPool?.TakeDamage(hit.Damage);
+            _vitalsPool?.TakeDamage(hit.Damage);
             OnHitTake?.Invoke(hit);
         }
 
         private void Awake()
         {
-            _healthPool = GetComponent<HealthPool>();
+            _vitalsPool = GetComponent<VitalsPool>();
         }
     }
     

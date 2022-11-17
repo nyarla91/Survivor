@@ -5,19 +5,18 @@ namespace Gameplay.Units.Enemy
 {
     public class EnemyStatus : PooledObject
     {
-        public HealthPool HealthPool { get; private set; }
+        public VitalsPool VitalsPool { get; private set; }
+
+        public override void Reset()
+        {
+            base.Reset();
+            VitalsPool.Ressurect();
+        }
 
         private void Awake()
         {
-            HealthPool = GetComponent<HealthPool>();
-            HealthPool.OnDie += PoolDisable;
-        }
-
-        public override void PoolDisable()
-        {
-            HealthPool.OnDie -= PoolDisable;
-            HealthPool.Ressurect();
-            base.PoolDisable();
+            VitalsPool = GetComponent<VitalsPool>();
+            VitalsPool.Health.OnOver += PoolDisable;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Gameplay.Units
         private void Shake(Hit _)
         {
             Transform.DOComplete();
-            Transform.DOShakeScale(0.2f, Vector2.one * 0.4f);
+            Transform.DOShakeScale(0.2f, Vector2.one);
         }
 
         private void OnDestroy()

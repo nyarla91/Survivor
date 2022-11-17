@@ -7,6 +7,7 @@ namespace Gameplay.UI.Joystick
 {
     public class OnScreenJoystick : Transformable, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
+        [SerializeField] private bool _emulateFromKeyboard;
         [SerializeField] private RectTransform _edgePoint;
         [SerializeField] private OnScreenJoystickStick _stick;
         [SerializeField] [Range(0, 1)] private float _innerDeadZone;
@@ -18,7 +19,9 @@ namespace Gameplay.UI.Joystick
         private float _radius;
         private Vector2 _offset;
 
-        public Vector2 Offset => _offset;
+        private Vector2 KeyboardOffset => new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        
+        public Vector2 Offset => _offset.magnitude == 0 ? KeyboardOffset : _offset;
 
         private void Awake()
         {
@@ -29,6 +32,7 @@ namespace Gameplay.UI.Joystick
 
         private void Update()
         {
+            print(KeyboardOffset);
             _offset = _stick.RectTransform.anchoredPosition / _radius;
             float offsetMagnitude = _offset.magnitude;
             if (offsetMagnitude < _innerDeadZone)
