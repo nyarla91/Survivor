@@ -1,8 +1,9 @@
-﻿using Gameplay.Units.Player;
+﻿using Gameplay.Infrastrucure;
+using Gameplay.Units.Player;
 using UnityEngine;
 using Zenject;
 
-namespace Gameplay.Infrastrucure
+namespace Infrastructure
 {
     public class GameplayInstaller : MonoInstaller
     {

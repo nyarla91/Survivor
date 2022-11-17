@@ -1,10 +1,13 @@
 ﻿using Extentions;
 using Extentions.Factory;
+using UnityEngine;
 
 namespace Gameplay.Units.Enemy
 {
     public class EnemyStatus : PooledObject
     {
+        [SerializeField] private int _expirienceDropped;
+        
         public VitalsPool VitalsPool { get; private set; }
 
         public override void Reset()

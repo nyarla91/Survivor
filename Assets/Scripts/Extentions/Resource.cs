@@ -1,59 +1,66 @@
 ﻿using System;
+using UnityEditor.Hardware;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace Gameplay.Entity
+namespace Gameplay.Units
 {
     [Serializable]
     public class Resource
     {
-        [SerializeField] private bool _possibleNegative;
-        [SerializeField] private float _value;
         [SerializeField] private float _maxValue;
+
+        private float _value;
 
         public float Value
         {
             get => _value;
             set
             {
-                if (value > MaxValue)
-                    OnGainExcess?.Invoke(value - MaxValue);
-                value = _possibleNegative ? Mathf.Min(value, MaxValue) : Mathf.Clamp(value, 0, _maxValue);
+                value = Mathf.Clamp(value, 0, MaxValue);
                 if (value.Equals(_value))
                     return;
 
-                _value = value;
-                OnChanged?.Invoke(value, Percent);
-                if (_value == 0)
+                if (_value > 0 && value == 0)
                     OnOver?.Invoke();
+
+                _value = value;
+                OnChange?.Invoke(_value, MaxValue);
             }
         }
 
-        public float MaxValue => _maxValue;
+        public float MaxValue
+        {
+            get => _maxValue;
+            set => _maxValue = value;
+        }
 
-        public float Percent => Value / MaxValue;
+        private ResourceFacade _facade;
+        public ResourceFacade Facade => _facade ??= new ResourceFacade(this);
 
-        public delegate void ChangedHandler(float newValue, float newPercent);
-        public event ChangedHandler OnChanged;
+        public delegate void OnChangeHandler(float current, float max);
+        public event OnChangeHandler OnChange;
         public event Action OnOver;
-        public event Action<float> OnGainExcess;
+        public event Action OnFull;
+    }
 
-        public void IncreaseMax(float increase)
-        {
-            if (increase <= 0)
-                return;
-            _maxValue += increase;
-            Value += increase;
-        }
+    public class ResourceFacade
+    {
+        private readonly Resource _resource;
 
-        public bool TrySpend(float value)
+        public float Value => _resource.Value;
+        public float MaxValue => _resource.MaxValue;
+
+        public event Resource.OnChangeHandler OnChange;
+        public event Action OnOver;
+        public event Action OnFull;
+
+        public ResourceFacade(Resource resource)
         {
-            if (value > Value)
-                return false;
-            
-            Value -= value;
-            return true;
+            _resource = resource;
+            _resource.OnChange += (current, max) => OnChange?.Invoke(current, max);
+            _resource.OnOver += () => OnOver?.Invoke();
+            _resource.OnFull += () => OnFull?.Invoke();
         }
-        
-        public static implicit operator float(Resource r) => r.Value;
     }
 }

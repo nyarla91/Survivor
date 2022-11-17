@@ -10,6 +10,7 @@ namespace Gameplay.Round
     {
         [SerializeField] private PoolFactory _beaconFactory;
         [SerializeField] private PoolFactory _enemyFactory;
+        [SerializeField] private PoolFactory _experienceFactory;
         [SerializeField] private BoxCollider2D _spawnArea;
         [SerializeField] private EnemySpawnCycle _cycle;
 
