@@ -8,7 +8,7 @@ namespace Factory
     {
         private PoolFactory _factory;
 
-        public event Action<PooledObject> OnPooledDisable;
+        public event Action<PooledObject> OnPoolDisable;
 
         public virtual void PoolInit(PoolFactory factory)
         {
@@ -17,7 +17,7 @@ namespace Factory
         
         public virtual void Disable()
         {
-            OnPooledDisable?.Invoke(this);
+            OnPoolDisable?.Invoke(this);
             if (_factory != null)
                 _factory.DisableObject(this);
             else

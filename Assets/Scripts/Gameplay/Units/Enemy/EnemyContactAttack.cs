@@ -23,7 +23,6 @@ namespace Gameplay.Units.Enemy
             if (_cooldown.IsOn || Overlap.Content.Length == 0)
                 return;
             Hitbox[] targets = Overlap.GetContent<Hitbox>(LayerMask.GetMask("Player"));
-            print(targets.Length);
             foreach (Hitbox target in targets)
             {
                 target.TakeHit(new Hit(_damagePerSecond));

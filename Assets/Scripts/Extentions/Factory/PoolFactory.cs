@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using Factory;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Zenject;
 
 namespace Extentions.Factory
 {
     public class PoolFactory : Transformable
     {
-        [SerializeField] private AssetReference _prefabReference;
-
-        private GameObject _prefab;
-        
+        [SerializeField] private GameObject _prefab;
         [SerializeField] private List<TaggedObject> _pool = new List<TaggedObject>();
-
+        
         [Inject] private ContainerFactory ContainerFactory { get; set; }
 
         
@@ -25,12 +21,11 @@ namespace Extentions.Factory
         }
 
         public T GetNewObject<T>(Vector3 position, Transform parent = null, string tag = "_") where T : PooledObject
-            => GetNewObject<T>(position, _prefab, parent, tag);
+            =>  GetNewObject<T>(position, null, parent, tag);
         
         public T GetNewObject<T>(Vector3 position, GameObject overridePrefab, Transform parent = null, string tag = "_") where T : PooledObject
         {
-            if (overridePrefab == null)
-                overridePrefab = _prefab;
+            GameObject prefab = overridePrefab ?? _prefab;
             
             for (int i = 0; i < _pool.Count; i++)
             {
@@ -43,28 +38,18 @@ namespace Extentions.Factory
                 newObject.Transform.SetParent(parent);
                 return newObject;
             }
-            return InstantiatePrefab<T>(position, overridePrefab, parent, tag);
+            return InstantiatePrefab<T>(position, prefab, parent, tag);
         }
 
         private T InstantiatePrefab<T>(Vector3 position, GameObject prefab, Transform parent, string tag) where T : PooledObject
         {
-            T newObject = ContainerFactory.Instantiate<T>(prefab, null);
+            T newObject = ContainerFactory.Instantiate<T>(prefab, parent);
             newObject.Transform.position = position;
             newObject.Transform.parent = parent;
             newObject.PoolInit(this);
             newObject.gameObject.SetActive(true);
             _pool.Add(new TaggedObject(tag, newObject));
             return newObject;
-        }
-
-        protected virtual async void Awake()
-        {
-            _prefab = await _prefabReference.LoadAssetAsync<GameObject>().Task;
-        }
-
-        private void OnDestroy()
-        {
-            _prefabReference.ReleaseAsset();
         }
 
         [Serializable]
