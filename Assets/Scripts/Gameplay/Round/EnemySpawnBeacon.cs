@@ -15,14 +15,15 @@ namespace Gameplay.Round
         
         [Inject] private ContainerFactory ContainerFactory { get; set; }
         
-        public async void Init(EnemySpawnDetails enemy)
+        public async void Init(PoolFactory factory, EnemySpawnDetails enemy)
         {
             Timer delay = new Timer(this, _delay);
             delay.Start();
             
             await delay.Await();
 
-            ContainerFactory.Instantiate<EnemyStatus>(enemy.Enemy, Transform.position);
+            GameObject prefab = enemy.Enemy;
+            factory.GetNewObject<EnemyStatus>(Transform.position, prefab, null, prefab.name);
             PoolDisable();
         }
 

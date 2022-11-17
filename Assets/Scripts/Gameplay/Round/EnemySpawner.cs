@@ -9,6 +9,7 @@ namespace Gameplay.Round
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private PoolFactory _beaconFactory;
+        [SerializeField] private PoolFactory _enemyFactory;
         [SerializeField] private BoxCollider2D _spawnArea;
         [SerializeField] private EnemySpawnCycle _cycle;
 
@@ -32,7 +33,7 @@ namespace Gameplay.Round
                 {
                     Vector2 position = _spawnArea.bounds.RandomPointInBounds2D();
                     EnemySpawnBeacon beacon = _beaconFactory.GetNewObject<EnemySpawnBeacon>(position);
-                    beacon.Init(enemies[i]);
+                    beacon.Init(_enemyFactory, enemies[i]);
                 }
             }
         }
