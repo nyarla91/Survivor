@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8954598087128008568}
   - component: {fileID: 6402549226292311094}
+  - component: {fileID: 6986418190527078285}
   m_Layer: 0
   m_Name: RunProgression
   m_TagString: Untagged
@@ -44,3 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39391624ed104b9db1ab77801c1b8253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _experience:
+    _maxValue: 1
+--- !u!114 &6986418190527078285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215849954703171656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137fd84a386643a4819d0f9966a26529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapons:
+  - <Weapon>k__BackingField: {fileID: 11400000, guid: eaa2a65b34aff5343b20707defad4d62, type: 2}
+    <Level>k__BackingField: 0
+  - <Weapon>k__BackingField: {fileID: 11400000, guid: ea0c00c663f3d7e45998b92c07fc527c, type: 2}
+    <Level>k__BackingField: 0

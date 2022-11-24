@@ -18,12 +18,12 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    <SpawnDelay>k__BackingField: 0.5
+    <SpawnDelay>k__BackingField: 0.25
     <Count>k__BackingField: 4
   - _enemyReference:
       m_AssetGUID: 496e99df95d41e8428d507a1e337d753
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    <SpawnDelay>k__BackingField: 1
+    <SpawnDelay>k__BackingField: 0.5
     <Count>k__BackingField: 1

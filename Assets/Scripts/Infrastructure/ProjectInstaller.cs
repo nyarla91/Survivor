@@ -12,6 +12,7 @@ namespace Infrastructure
         {
             GameObject runProgression = Container.InstantiatePrefab(_runProgressionPrefab);
             Container.Bind<PlayerLevel>().FromInstance(runProgression.GetComponent<PlayerLevel>());
+            Container.Bind<RunKit>().FromInstance(runProgression.GetComponent<RunKit>());
         }
     }
 }

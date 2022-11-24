@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Content
 {
     public class WeaponDetails : ScriptableObject
     {
+        [field: SerializeField] public AssetReferenceGameObject Behaviour { get; private set; }
         [field: Header("Display data")]
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public string Name { get; private set; }

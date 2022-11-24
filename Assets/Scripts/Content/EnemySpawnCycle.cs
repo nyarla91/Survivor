@@ -37,16 +37,13 @@ namespace Content
     [Serializable]
     public class EnemySpawnDetails
     {
-        [SerializeField] private AssetReference _enemyReference;
+        [SerializeField] private AssetReferenceGameObject _enemyReference;
         
         [field: SerializeField] public float SpawnDelay{ get; private set; }
         [field: SerializeField] public int Count { get; private set; }
         public GameObject Enemy { get; private set; }
 
-        public async Task Load()
-        {
-            Enemy = await _enemyReference.LoadAssetAsync<GameObject>().Task;
-        }
+        public async Task Load() => Enemy = await _enemyReference.LoadAssetAsync().Task;
 
         public void Unload()
         {

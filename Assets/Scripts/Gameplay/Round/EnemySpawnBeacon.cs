@@ -15,7 +15,7 @@ namespace Gameplay.Round
         
         [Inject] private ContainerFactory ContainerFactory { get; set; }
         
-        public async void Init(PoolFactory factory, EnemySpawnDetails enemy)
+        public async void Init(PoolFactory enemyFactory, PoolFactory experienceFactory, EnemySpawnDetails enemy)
         {
             Timer delay = new Timer(this, _delay);
             delay.Start();
@@ -23,7 +23,8 @@ namespace Gameplay.Round
             await delay.Await();
 
             GameObject prefab = enemy.Enemy;
-            factory.GetNewObject<EnemyStatus>(Transform.position, prefab, null, prefab.name);
+            EnemyStatus newEnemy = enemyFactory.GetNewObject<EnemyStatus>(Transform.position, prefab, null, prefab.name);
+            newEnemy.ExperienceFactory = experienceFactory;
             PoolDisable();
         }
 

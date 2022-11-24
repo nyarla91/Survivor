@@ -29,6 +29,14 @@ MonoBehaviour:
     m_Address: Gameplay/Enemy/Skeleton
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ffb0d95b403588c4fa15d8ca8394437f
+    m_Address: Gameplay/Weapon/Staff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 45817d305859d2c4480d2f2c5d27372c
+    m_Address: Gameplay/Weapon/Sword
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 938109e34fdb9164396dc084d9c0d9d2, type: 2}
   m_SchemaSet:

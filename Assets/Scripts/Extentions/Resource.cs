@@ -1,9 +1,7 @@
 ﻿using System;
-using UnityEditor.Hardware;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace Gameplay.Units
+namespace Extentions
 {
     [Serializable]
     public class Resource
@@ -35,13 +33,14 @@ namespace Gameplay.Units
             set => _maxValue = value;
         }
 
+        public bool IsFull => Value.Equals(MaxValue);
+
         private ResourceFacade _facade;
         public ResourceFacade Facade => _facade ??= new ResourceFacade(this);
 
         public delegate void OnChangeHandler(float current, float max);
         public event OnChangeHandler OnChange;
         public event Action OnOver;
-        public event Action OnFull;
     }
 
     public class ResourceFacade
@@ -53,14 +52,12 @@ namespace Gameplay.Units
 
         public event Resource.OnChangeHandler OnChange;
         public event Action OnOver;
-        public event Action OnFull;
 
         public ResourceFacade(Resource resource)
         {
             _resource = resource;
             _resource.OnChange += (current, max) => OnChange?.Invoke(current, max);
             _resource.OnOver += () => OnOver?.Invoke();
-            _resource.OnFull += () => OnFull?.Invoke();
         }
     }
 }

@@ -32,7 +32,6 @@ namespace Gameplay.UI.Joystick
 
         private void Update()
         {
-            print(KeyboardOffset);
             _offset = _stick.RectTransform.anchoredPosition / _radius;
             float offsetMagnitude = _offset.magnitude;
             if (offsetMagnitude < _innerDeadZone)

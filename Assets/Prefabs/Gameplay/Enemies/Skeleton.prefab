@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6164839076894573344, guid: 10aad28c7f283a143a27f24831f09b44, type: 3}
+      propertyPath: _expirienceDropped
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6468678171792001146, guid: 10aad28c7f283a143a27f24831f09b44, type: 3}
       propertyPath: _maxHealth
       value: 20

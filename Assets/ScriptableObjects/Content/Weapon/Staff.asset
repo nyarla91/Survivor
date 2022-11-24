@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc9cc202e2f4a829a8d38318cbf6cd1, type: 3}
   m_Name: Staff
   m_EditorClassIdentifier: 
+  <Behaviour>k__BackingField:
+    m_AssetGUID: ffb0d95b403588c4fa15d8ca8394437f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   <Sprite>k__BackingField: {fileID: 0}
   <Name>k__BackingField: 
   <Description>k__BackingField: 
   <AttackRange>k__BackingField: 5
-  <AttackPeriod>k__BackingField: 0.3
-  <DamagePerAttack>k__BackingField: 2
+  <AttackPeriod>k__BackingField: 0.2
+  <DamagePerAttack>k__BackingField: 8
   <ProjectilesPerShot>k__BackingField: 1
   <SpreadAngle>k__BackingField: 0
   <ProjectileSpeed>k__BackingField: 8
