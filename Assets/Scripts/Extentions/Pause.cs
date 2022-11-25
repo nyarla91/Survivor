@@ -1,15 +1,23 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Extentions;
+using System.Linq;
 using UnityEngine;
 
-public static class Pause
+namespace Extentions.Menu
 {
-    private static List<MonoBehaviour> _sources = new List<MonoBehaviour>();
-    public static bool Paused => _sources.Count > 0;
-    public static bool Unpaused => !Paused;
+    public class Pause : MonoBehaviour
+    {
+        private readonly List<MonoBehaviour> _pauseSources = new List<MonoBehaviour>();
 
-    public static void AddPauseSource(MonoBehaviour source) => _sources.Add(source);
-    public static void RemovePauseSource(MonoBehaviour source) => _sources.TryRemove(source);
-    public static void ClearPause() => _sources = new List<MonoBehaviour>();
+        public bool IsPaused => _pauseSources.Where(source => source != null).ToArray().Length > 0;
+        public bool IsUnpaused => ! IsPaused;
+        
+        public void AddPauseSource(MonoBehaviour source) => _pauseSources.Add(source);
+        public void RemoveSource(MonoBehaviour source) => _pauseSources.TryRemove(source);
+
+        private void Update()
+        {
+            print(IsPaused);
+        }
+    }
 }

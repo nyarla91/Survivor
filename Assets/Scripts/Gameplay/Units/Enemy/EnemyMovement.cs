@@ -1,4 +1,5 @@
 ﻿using Extentions;
+using Extentions.Menu;
 using Gameplay.Units.Player;
 using UnityEngine;
 using Zenject;
@@ -14,6 +15,8 @@ namespace Gameplay.Units.Enemy
 
         private Transform _character;
         
+        [Inject] private Pause Pause { get; set; }
+        
         [Inject]
         private void Construct(CharacterMovement character)
         {
@@ -22,6 +25,12 @@ namespace Gameplay.Units.Enemy
 
         private void FixedUpdate()
         {
+            if (Pause.IsPaused)
+            {
+                Lazy.velocity = Vector2.zero;
+                return;
+            }
+            
             float distanceToPlayer = Vector3.Distance(Transform.position.WithZ(0), _character.position.WithZ(0));
             
             float speed;

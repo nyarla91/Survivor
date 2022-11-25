@@ -117,7 +117,7 @@ MonoBehaviour:
     _maxValue: 50
   _shields:
     _maxValue: 20
-  _shieldRegenreration: 1
+  _shieldRegenreration: 2
 --- !u!114 &692935984228549874
 MonoBehaviour:
   m_ObjectHideFlags: 0

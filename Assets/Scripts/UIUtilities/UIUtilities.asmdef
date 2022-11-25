@@ -1,10 +1,8 @@
 {
-    "name": "Extentions",
+    "name": "UIUtilities",
     "rootNamespace": "",
     "references": [
-        "GUID:9e24947de15b9834991c9d8411ea37cf",
-        "GUID:84651a3751eca9349aac36a66bba901b",
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:05585d684feb11d4cbb1b26b9513a71c",
         "GUID:79790a9cc7b2b9f47985f6cf5126105b"
     ],
     "includePlatforms": [],

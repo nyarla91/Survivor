@@ -1,6 +1,8 @@
 ﻿using System;
 using Extentions;
+using Extentions.Menu;
 using UnityEngine;
+using Zenject;
 
 namespace Gameplay.Units
 {
@@ -12,6 +14,8 @@ namespace Gameplay.Units
 
         public ResourceFacade Health => _health.Facade;
         public ResourceFacade Shields => _shields.Facade;
+        
+        [Inject] private Pause Pause { get; set; }
 
         public bool IsDead { get; private set; }
 
@@ -58,6 +62,8 @@ namespace Gameplay.Units
 
         private void FixedUpdate()
         {
+            if (Pause.IsPaused)
+                return;
             RestoreShields(_shieldRegenreration * Time.fixedDeltaTime);
         }
     }

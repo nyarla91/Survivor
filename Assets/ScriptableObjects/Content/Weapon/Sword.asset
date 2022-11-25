@@ -21,7 +21,7 @@ MonoBehaviour:
   <Name>k__BackingField: 
   <Description>k__BackingField: 
   <AttackRange>k__BackingField: 2
-  <AttackPeriod>k__BackingField: 0.5
+  <AttackPeriod>k__BackingField: 0.25
   <DamagePerAttack>k__BackingField: 5
   <AttackSplash>k__BackingField: 2
   <SplashDamageModifier>k__BackingField: 0.5

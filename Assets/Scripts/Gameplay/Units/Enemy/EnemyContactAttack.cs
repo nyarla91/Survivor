@@ -1,5 +1,7 @@
 ﻿using Extentions;
+using Extentions.Menu;
 using UnityEngine;
+using Zenject;
 
 namespace Gameplay.Units.Enemy
 {
@@ -11,10 +13,12 @@ namespace Gameplay.Units.Enemy
         
         private OverlapTrigger2D Overlap { get; set; }
 
+        [Inject] private Pause Pause { get; set; }
+
         private void Awake()
         {
             Overlap = GetComponent<OverlapTrigger2D>();
-            _cooldown = new Timer(this, 1);
+            _cooldown = new Timer(this, 1, Pause);
             _cooldown.Restart();
         }
 

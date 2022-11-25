@@ -2,7 +2,9 @@
 using Content;
 using Extentions;
 using Extentions.Factory;
+using Extentions.Menu;
 using UnityEngine;
+using Zenject;
 
 namespace Gameplay.Round
 {
@@ -14,6 +16,8 @@ namespace Gameplay.Round
         [SerializeField] private BoxCollider2D _spawnArea;
         [SerializeField] private EnemySpawnCycle _cycle;
 
+        [Inject] private Pause Pause { get; set; }
+        
         private async void Awake()
         {
             await _cycle.Load();
@@ -27,9 +31,12 @@ namespace Gameplay.Round
         private IEnumerator Spawn()
         {
             EnemySpawnDetails[] enemies = _cycle.Enemies;
+            Timer _spawnTimer = new Timer(this, enemies[0].SpawnDelay, Pause);
             for (int i = 0; i < enemies.Length; i = (i + 1).RepeatIndex(enemies.Length))
             {
-                yield return new WaitForSeconds(enemies[i].SpawnDelay);
+                _spawnTimer.Length = enemies[i].SpawnDelay;
+                _spawnTimer.Restart();
+                yield return _spawnTimer.Yield;
                 for (int j = 0; j < enemies[i].Count; j++)
                 {
                     Vector2 position = _spawnArea.bounds.RandomPointInBounds2D();
