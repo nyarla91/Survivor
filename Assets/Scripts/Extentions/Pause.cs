@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Extentions.Menu
+namespace Extentions
 {
     public class Pause : MonoBehaviour
     {
@@ -14,10 +13,5 @@ namespace Extentions.Menu
         
         public void AddPauseSource(MonoBehaviour source) => _pauseSources.Add(source);
         public void RemoveSource(MonoBehaviour source) => _pauseSources.TryRemove(source);
-
-        private void Update()
-        {
-            print(IsPaused);
-        }
     }
 }

@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8954598087128008568}
   - component: {fileID: 6402549226292311094}
   - component: {fileID: 6986418190527078285}
+  - component: {fileID: 760902303873188385}
+  - component: {fileID: 1049401871410227617}
+  - component: {fileID: 6118757089636119184}
   m_Layer: 0
   m_Name: RunProgression
   m_TagString: Untagged
@@ -64,3 +67,116 @@ MonoBehaviour:
     <Level>k__BackingField: 0
   - <Weapon>k__BackingField: {fileID: 11400000, guid: ea0c00c663f3d7e45998b92c07fc527c, type: 2}
     <Level>k__BackingField: 0
+--- !u!114 &760902303873188385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215849954703171656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fa4b1563704eaa8e36d05ca6b4e949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats:
+    _pairs:
+    - _key: health
+      _value:
+        _displayName: Health
+        _displaySuffix: 
+        _icon: {fileID: 21300000, guid: 8657058a2e03a544c8349d95abecb991, type: 3}
+        _startingValue: 20
+        _amplificationPerLevel: 20
+    - _key: shields
+      _value:
+        _displayName: Shield
+        _displaySuffix: 
+        _icon: {fileID: 21300000, guid: 0d1995b8cf7f71f46a450fff9559fc71, type: 3}
+        _startingValue: 5
+        _amplificationPerLevel: 5
+    - _key: shields regen
+      _value:
+        _displayName: Shield regeneration
+        _displaySuffix: /sec
+        _icon: {fileID: 21300000, guid: 0fce9b957f1b31c4e926da3b3374aced, type: 3}
+        _startingValue: 1
+        _amplificationPerLevel: 1
+    - _key: damage
+      _value:
+        _displayName: Damage
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: d29ed6e709ea88c42b225ebe60cd7894, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 25
+    - _key: melee damage
+      _value:
+        _displayName: Melee damage
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: f88e012e1f74ed74db714f7a6dae1b91, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 50
+    - _key: ranged damage
+      _value:
+        _displayName: Ranged damage
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: 6c2e9719a65190c40a3e264f7e7aa1bd, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 50
+    - _key: fire damage
+      _value:
+        _displayName: Fire damage
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: 2617b2e8b460ea841a127ff82543c8be, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 50
+    - _key: movement speed
+      _value:
+        _displayName: Movement Speed
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: 3087b24f1e4a6d540abd180970461c89, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 25
+--- !u!114 &1049401871410227617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215849954703171656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4addfc2474534d0ea2f81bc9e43f0818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rounds:
+  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <WeaponAction>k__BackingField: 0
+    <Length>k__BackingField: 0
+  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <WeaponAction>k__BackingField: 0
+    <Length>k__BackingField: 0
+  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <WeaponAction>k__BackingField: 0
+    <Length>k__BackingField: 0
+  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <WeaponAction>k__BackingField: 0
+    <Length>k__BackingField: 0
+  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <WeaponAction>k__BackingField: 1
+    <Length>k__BackingField: 0
+--- !u!114 &6118757089636119184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215849954703171656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7656b5cc256b439793bac6b08ebe34be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingWeapons:
+  - {fileID: 11400000, guid: eaa2a65b34aff5343b20707defad4d62, type: 2}
+  - {fileID: 11400000, guid: ea0c00c663f3d7e45998b92c07fc527c, type: 2}

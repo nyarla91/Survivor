@@ -1,6 +1,4 @@
-﻿using System;
-using Codice.CM.Common;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Extentions;
 using UnityEngine;
 

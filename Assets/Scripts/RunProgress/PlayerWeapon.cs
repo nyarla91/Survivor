@@ -15,5 +15,7 @@ namespace RunProgress
             Weapon = weapon;
             Level = level;
         }
+
+        public void Upgrade() => Level++;
     }
 }

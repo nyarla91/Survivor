@@ -7,19 +7,20 @@ namespace RunProgress
     public class PlayerLevel : MonoBehaviour
     {
         [SerializeField] private Resource _experience;
-        private int _level;
+        
+        private int _upgradePoints;
 
         public ResourceFacade Experience => _experience.Facade;
 
-        public int Level
+        public int UpgradePoints
         {
-            get => _level;
+            get => _upgradePoints;
             set
             {
-                if (value == _level)
+                if (value == _upgradePoints)
                     return;
-                _level = value;
-                OnLevelChanged?.Invoke(_level);
+                _upgradePoints = value;
+                OnLevelChanged?.Invoke(_upgradePoints);
             }
         }
 
@@ -28,12 +29,11 @@ namespace RunProgress
         public void AddOneExperience()
         {
             _experience.Value++;
-            if (_experience.IsFull)
-            {
-                _experience.Value = 0;
-                _experience.MaxValue = (int) _experience.MaxValue * 2f;
-                Level++;
-            }
+            if ( ! _experience.IsUnfilled)
+                return;
+            _experience.Value = 0;
+            _experience.MaxValue = (int) _experience.MaxValue * 2f;
+            UpgradePoints++;
         }
     }
 }

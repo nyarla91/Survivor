@@ -33,7 +33,8 @@ namespace Extentions
             set => _maxValue = value;
         }
 
-        public bool IsFull => Value.Equals(MaxValue);
+        public bool IsFilled => Value.Equals(MaxValue);
+        public bool IsUnfilled => ! IsFilled;
 
         private ResourceFacade _facade;
         public ResourceFacade Facade => _facade ??= new ResourceFacade(this);

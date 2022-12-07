@@ -13,7 +13,7 @@ namespace Gameplay.Units.Player
         [SerializeField] private float _weaponsOffset;
         
         [Inject]
-        private void Construct(ContainerFactory factory, RunKit kit)
+        private void Construct(ContainerFactory factory, PlayerKit kit)
         {
             for (var i = 0; i < kit.Weapons.Count; i++)
             {

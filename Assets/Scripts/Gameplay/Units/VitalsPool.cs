@@ -1,6 +1,4 @@
-﻿using System;
-using Extentions;
-using Extentions.Menu;
+﻿using Extentions;
 using UnityEngine;
 using Zenject;
 
@@ -18,6 +16,14 @@ namespace Gameplay.Units
         [Inject] private Pause Pause { get; set; }
 
         public bool IsDead { get; private set; }
+
+        public void Init(int health, int shields, float shieldsRegeneration)
+        {
+            _health.Value = _health.MaxValue = health;
+            _shields.Value = _shields.MaxValue = shields;
+            _shieldRegenreration = shieldsRegeneration;
+            IsDead = false;
+        }
 
         public void TakeDamage(float damage)
         {

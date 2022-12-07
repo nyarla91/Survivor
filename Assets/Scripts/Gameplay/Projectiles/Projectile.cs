@@ -1,4 +1,7 @@
-﻿using Extentions.Factory;
+﻿using System;
+using Extentions;
+using Extentions.Factory;
+using Extentions.Menu;
 using Gameplay.Infrastrucure;
 using Gameplay.Units;
 using UnityEngine;
@@ -24,7 +27,6 @@ namespace Gameplay.Projectiles
             set
             {
                 _direction = value.normalized;
-                Rigidbody.velocity = Velocity;
             }
         }
 
@@ -34,7 +36,6 @@ namespace Gameplay.Projectiles
             set
             {
                 _speed = value;
-                Rigidbody.velocity = Velocity;
             }
         }
 
@@ -57,6 +58,8 @@ namespace Gameplay.Projectiles
                 gameObject.layer = _entityLayersSettings.Layers[value];
             }
         }
+        
+        [Inject] private Pause Pause { get; set; }
 
         [Inject]
         private void Construct(EntityLayersSettings entityLayersSettings)
@@ -72,6 +75,17 @@ namespace Gameplay.Projectiles
         }
 
 
+        public override void PoolDisable()
+        {
+            Velocity = Vector2.zero;
+            base.PoolDisable();
+        }
+
+        private void FixedUpdate()
+        {
+            Rigidbody.velocity = Pause.IsPaused ? Vector2.zero : (Speed * Direction);
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.TryGetComponent(out Hitbox hitbox))
@@ -79,12 +93,6 @@ namespace Gameplay.Projectiles
             
             hitbox.TakeHit(_hit);
             PoolDisable();
-        }
-
-        public override void PoolDisable()
-        {
-            Velocity = Vector2.zero;
-            base.PoolDisable();
         }
     }
 }
