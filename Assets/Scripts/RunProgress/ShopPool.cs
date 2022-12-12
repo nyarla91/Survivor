@@ -21,5 +21,10 @@ namespace RunProgress
         }
 
         public void RemoveWeapon(WeaponDetails weapon) => _weapons.TryRemove(weapon);
+
+        private void Start()
+        {
+            Reset();
+        }
     }
 }

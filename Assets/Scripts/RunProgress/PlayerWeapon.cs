@@ -7,12 +7,16 @@ namespace RunProgress
     [Serializable]
     public class PlayerWeapon
     {
-        [field: SerializeField] public WeaponDetails Weapon { get; private set; }
+        public const float UpgradeModifier = 1;
+        
+        [field: SerializeField] public WeaponDetails Details { get; private set; }
         [field: SerializeField] public int Level { get; private set; }
 
-        public PlayerWeapon(WeaponDetails weapon, int level)
+        public float TotalDamagePerAttack => Details.DamagePerAttack + Details.DamagePerAttack * (Level - 1) * UpgradeModifier;
+        
+        public PlayerWeapon(WeaponDetails details, int level)
         {
-            Weapon = weapon;
+            Details = details;
             Level = level;
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Content;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace RunProgress
 
         public void AddWeapon(WeaponDetails weapon)
         {
+            if (weapon == null)
+                throw new ArgumentNullException();
             _weapons.Add(new PlayerWeapon(weapon, 1));
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Shop
 {
-    public abstract class ShopStage<T> : MonoBehaviour where T : class
+    public abstract class ShopStage<T> : LazyGetComponent<CanvasGroup> where T : class
     {
         [SerializeField] private string _label;
         [SerializeField] private ShopCard<T>[] _cards;
@@ -17,31 +17,36 @@ namespace Shop
         public void Choose(T chosen)
         {
             if (_chosenObj != null)
-                _chosenObj = chosen;
+                return;
+            _chosenObj = chosen;
         }
 
-        public IEnumerator StartUpgrade()
+        public IEnumerator StartSelection()
         {
-            yield return StartCoroutine(StartUpgrade(Iterations));
+            yield return StartCoroutine(StartSelection(Iterations));
         }
         
-        public IEnumerator StartUpgrade(int iterations)
+        public IEnumerator StartSelection(int iterations)
         {
             if (iterations <= 0)
                 yield break;
 
+            Lazy.blocksRaycasts = true;
+            Lazy.alpha = 1;
             for (int i = 0; i < iterations; i++)
             {
                 T[] suggestedStats = ObjPool.PickRandomElements(_cards.Length).ToArray();
                 for (int card = 0; card < _cards.Length; card++)
                 {
-                    _cards[card].Show(suggestedStats[card]);
+                    _cards[card].InitObj(suggestedStats[card]);
                 }
                 _chosenObj = null;
                 yield return new WaitUntil(() => _chosenObj != null);
+                print("Await");
                 ProcessChosenObj(_chosenObj);
             }
-            _cards.Foreach(card => card.Hide());
+            Lazy.blocksRaycasts = false;
+            Lazy.alpha = 0;
         }
 
         protected abstract void ProcessChosenObj(T obj);

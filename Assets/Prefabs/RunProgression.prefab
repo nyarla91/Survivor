@@ -62,11 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137fd84a386643a4819d0f9966a26529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapons:
-  - <Weapon>k__BackingField: {fileID: 11400000, guid: eaa2a65b34aff5343b20707defad4d62, type: 2}
-    <Level>k__BackingField: 0
-  - <Weapon>k__BackingField: {fileID: 11400000, guid: ea0c00c663f3d7e45998b92c07fc527c, type: 2}
-    <Level>k__BackingField: 0
+  _weapons: []
 --- !u!114 &760902303873188385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,5 +174,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingWeapons:
-  - {fileID: 11400000, guid: eaa2a65b34aff5343b20707defad4d62, type: 2}
+  - {fileID: 11400000, guid: 7c6c96e9ebe2e9c4bbd6cfa78ae0bab4, type: 2}
+  - {fileID: 11400000, guid: 9d9d56e0a18d0424b8ed92937d35ca40, type: 2}
+  - {fileID: 11400000, guid: 3c0d311cb84a70443afa1af83c2962a1, type: 2}
+  - {fileID: 11400000, guid: 2bbc5a936fb8f4f45bc7790233a6507a, type: 2}
+  - {fileID: 11400000, guid: eb6ddeab619ea064ea2d9e3d26becc71, type: 2}
+  - {fileID: 11400000, guid: 49305282dafd77d488d66b3e4f2fab1e, type: 2}
   - {fileID: 11400000, guid: ea0c00c663f3d7e45998b92c07fc527c, type: 2}
+  - {fileID: 11400000, guid: f991c3a8d806ddf4985c09dd09a0e048, type: 2}
+  - {fileID: 11400000, guid: d9340e8701163f84fae38f63d0c175b0, type: 2}
+  - {fileID: 11400000, guid: 0040fc09002271f45a2eccb14291270f, type: 2}
+  - {fileID: 11400000, guid: 648e9cc1a06018f449a0414bdbe9be9e, type: 2}
+  - {fileID: 11400000, guid: 92852e77db1eb6847894a8e12b0f8c43, type: 2}

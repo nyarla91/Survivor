@@ -13,6 +13,7 @@ namespace Shop
         protected override void ProcessChosenObj(WeaponDetails obj)
         {
             Kit.AddWeapon(obj);
+            Pool.RemoveWeapon(obj);
         }
     }
 }

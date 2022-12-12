@@ -22,7 +22,7 @@ namespace Gameplay.Units.Player
 
             async void LoadAndInstantiate(PlayerWeapon weapon, float angle)
             {
-                AssetReferenceGameObject reference = weapon.Weapon.Behaviour;
+                AssetReferenceGameObject reference = weapon.Details.Behaviour;
                 GameObject prefab = await reference.LoadAssetAsync().Task;
                 Vector3 position = Transform.position + (Vector3) angle.DegreesToVector2() * _weaponsOffset;
                 WeaponBehaviour behaviour = factory.Instantiate<WeaponBehaviour>(prefab, position, Transform);
