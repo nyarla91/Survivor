@@ -1,7 +1,6 @@
 ﻿using RunProgress;
-using UnityEngine;
 
-namespace Shop
+namespace Shop.Weapon.Upgrade
 {
     public class WeaponUpgradeCard : ShopCard<PlayerWeapon> { }
 }

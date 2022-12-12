@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crossbow
   m_EditorClassIdentifier: 
   <Behaviour>k__BackingField:
-    m_AssetGUID: 
+    m_AssetGUID: ffb0d95b403588c4fa15d8ca8394437f
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

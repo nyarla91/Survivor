@@ -1,9 +1,6 @@
-﻿using System;
-using Extentions;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 namespace Shop
 {
@@ -18,7 +15,7 @@ namespace Shop
             _icon.sprite = GetIcon(obj);
         }
         
-        protected abstract string GetDisplayText(T obj);
-        protected abstract Sprite GetIcon(T obj);
+        protected abstract string GetDisplayText(T item);
+        protected abstract Sprite GetIcon(T item);
     }
 }

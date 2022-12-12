@@ -37,6 +37,18 @@ MonoBehaviour:
     m_Address: Gameplay/Weapon/Sword
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 702af203ccd8ce24283e4ca041947a78
+    m_Address: Scenes/Shop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2cda990e2423bbf4892e6590ba056729
+    m_Address: Scenes/Gameplay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3be3db12b6f4d2a4c881e8f9b6596edc
+    m_Address: Scenes/Loading
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 938109e34fdb9164396dc084d9c0d9d2, type: 2}
   m_SchemaSet:

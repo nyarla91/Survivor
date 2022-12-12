@@ -16,6 +16,7 @@ namespace Infrastructure
             Container.Bind<PlayerStats>().FromInstance(runProgression.GetComponent<PlayerStats>());
             Container.Bind<RunRounds>().FromInstance(runProgression.GetComponent<RunRounds>());
             Container.Bind<ShopPool>().FromInstance(runProgression.GetComponent<ShopPool>());
+            Container.Bind<RunSceneLoader>().FromInstance(runProgression.GetComponent<RunSceneLoader>());
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using Content;
 using RunProgress;
-using UnityEngine;
 using Zenject;
 
-namespace Shop
+namespace Shop.Weapon.Purchase
 {
     public class WeaponPurchaseStage : ShopStage<WeaponDetails>
     {

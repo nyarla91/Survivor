@@ -6,7 +6,6 @@ namespace Shop
     public class ShopCard<T> : LazyGetComponent<ShopCardView<T>> where T : class
     {
         [SerializeField] private ShopStage<T> _stage;
-        [SerializeField] private ShopCardView<T> _view;
 
 
         private T _currentObj;

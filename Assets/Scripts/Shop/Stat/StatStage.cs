@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using Extentions;
-using RunProgress;
-using UnityEngine;
+﻿using RunProgress;
 using Zenject;
 
-namespace Shop
+namespace Shop.Stat
 {
     public class StatStage : ShopStage<ModifiedStat>
     {

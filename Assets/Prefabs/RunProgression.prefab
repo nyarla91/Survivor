@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 760902303873188385}
   - component: {fileID: 1049401871410227617}
   - component: {fileID: 6118757089636119184}
+  - component: {fileID: 4952059141154945028}
   m_Layer: 0
   m_Name: RunProgression
   m_TagString: Untagged
@@ -186,3 +187,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0040fc09002271f45a2eccb14291270f, type: 2}
   - {fileID: 11400000, guid: 648e9cc1a06018f449a0414bdbe9be9e, type: 2}
   - {fileID: 11400000, guid: 92852e77db1eb6847894a8e12b0f8c43, type: 2}
+--- !u!114 &4952059141154945028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215849954703171656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329c3a6e6a2f4cd5993c92ddfe5b9236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadingScene:
+    m_AssetGUID: 3be3db12b6f4d2a4c881e8f9b6596edc
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _shopScene:
+    m_AssetGUID: 702af203ccd8ce24283e4ca041947a78
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _gameplayScene:
+    m_AssetGUID: 2cda990e2423bbf4892e6590ba056729
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

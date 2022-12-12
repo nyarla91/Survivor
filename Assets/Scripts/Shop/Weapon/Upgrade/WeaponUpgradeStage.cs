@@ -1,8 +1,7 @@
 ﻿using RunProgress;
-using UnityEngine;
 using Zenject;
 
-namespace Shop
+namespace Shop.Weapon.Upgrade
 {
     public class WeaponUpgradeStage : ShopStage<PlayerWeapon>
     {

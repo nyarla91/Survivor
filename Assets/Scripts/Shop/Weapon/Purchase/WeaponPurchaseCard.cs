@@ -1,7 +1,6 @@
 ﻿using Content;
-using UnityEngine;
 
-namespace Shop
+namespace Shop.Weapon.Purchase
 {
     public class WeaponPurchaseCard : ShopCard<WeaponDetails> { }
 }
