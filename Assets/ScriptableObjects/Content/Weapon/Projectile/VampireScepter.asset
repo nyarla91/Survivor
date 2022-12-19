@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc9cc202e2f4a829a8d38318cbf6cd1, type: 3}
-  m_Name: PriestsMace
+  m_Name: VampireScepter
   m_EditorClassIdentifier: 
   <Behaviour>k__BackingField:
     m_AssetGUID: ffb0d95b403588c4fa15d8ca8394437f
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 822cd5d7d0382cf43a668e0090551460, type: 3}
-  <Name>k__BackingField: Priest's mace
-  <AbilityDescription>k__BackingField: 
-  <AttackRange>k__BackingField: 0
-  <AttackPeriod>k__BackingField: 0
-  <DamagePerAttack>k__BackingField: 0
+  <Sprite>k__BackingField: {fileID: 21300000, guid: a2aab7a137065b74f9e38bed8ae7f37a, type: 3}
+  <Name>k__BackingField: Vampire scepter
+  <AbilityDescription>k__BackingField: Restore health equal to 1% of this weapon's
+    damage
+  <AttackRange>k__BackingField: 5
+  <AttackPeriod>k__BackingField: 0.25
+  <DamagePerAttack>k__BackingField: 2
   <DamageType>k__BackingField: 1
-  <ProjectilesPerShot>k__BackingField: 0
-  <SpreadAngle>k__BackingField: 0
-  <ProjectileSpeed>k__BackingField: 0
+  <ProjectilesPerShot>k__BackingField: 2
+  <SpreadAngle>k__BackingField: 45
+  <ProjectileSpeed>k__BackingField: 1

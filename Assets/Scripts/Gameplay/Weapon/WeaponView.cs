@@ -10,6 +10,7 @@ namespace Gameplay.Weapon
     public abstract class WeaponView : Transformable
     {
         [field: SerializeField] protected Transform Sprite { get; private set; }
+        [field: SerializeField] protected SpriteRenderer Renderer { get; private set; }
 
         private WeaponBehaviour _model;
         protected WeaponBehaviour Model => _model ??= GetComponentInParent<WeaponBehaviour>();
@@ -21,14 +22,11 @@ namespace Gameplay.Weapon
         }
         [Inject] private Pause Pause { get; set; }
 
-        private void Awake()
-        {
-            Model.OnAttack += Animate;
-        }
-
         private void Start()
         {
             ZRotation = Random.Range(0, 360);
+            Model.OnAttack += Animate;
+            Renderer.sprite = Model.Details.Sprite;
         }
 
         private void FixedUpdate()

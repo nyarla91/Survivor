@@ -1,7 +1,6 @@
 ﻿using System;
 using Extentions;
 using Extentions.Factory;
-using Extentions.Menu;
 using Gameplay.Infrastrucure;
 using Gameplay.Units;
 using UnityEngine;
@@ -11,15 +10,19 @@ namespace Gameplay.Projectiles
 {
     public class Projectile : PooledObject
     {
+        [SerializeField] [Tooltip("Set -1 to disable")] private float _maxTravelDistance = 10;
+        [SerializeField] private bool _destroyedOnHit = true;
+        
         private EntityLayersSettings _entityLayersSettings;
         
         private EntityOwner _owner;
-        private Hit _hit;
         private Vector2 _direction;
         private float _speed;
+        private float _distanceTraveled;
 
         private Rigidbody2D _rigidbody;
         private Rigidbody2D Rigidbody => _rigidbody ??= GetComponent<Rigidbody2D>();
+        public Hit Hit { get; private set; }
 
         public Vector3 Direction
         {
@@ -61,6 +64,8 @@ namespace Gameplay.Projectiles
         
         [Inject] private Pause Pause { get; set; }
 
+        public event Action<Hitbox> OnHitboxHit;
+
         [Inject]
         private void Construct(EntityLayersSettings entityLayersSettings)
         {
@@ -70,7 +75,7 @@ namespace Gameplay.Projectiles
         public void Init(EntityOwner owner, Hit hit, Vector2 velocity)
         {
             Owner = owner;
-            _hit = hit;
+            Hit = hit;
             Velocity = velocity;
         }
 
@@ -84,6 +89,12 @@ namespace Gameplay.Projectiles
         private void FixedUpdate()
         {
             Rigidbody.velocity = Pause.IsPaused ? Vector2.zero : (Speed * Direction);
+            
+            if (_maxTravelDistance.ApproximatelyEqual(-1, 0.001f))
+                return;
+            _distanceTraveled = Rigidbody.velocity.magnitude;
+            if (_distanceTraveled >= _maxTravelDistance)
+                PoolDisable();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -91,8 +102,10 @@ namespace Gameplay.Projectiles
             if (!other.TryGetComponent(out Hitbox hitbox))
                 return;
             
-            hitbox.TakeHit(_hit);
-            PoolDisable();
+            hitbox.TakeHit(Hit);
+            OnHitboxHit?.Invoke(hitbox);
+            if (_destroyedOnHit)
+                PoolDisable();
         }
     }
 }

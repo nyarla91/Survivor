@@ -5,6 +5,7 @@ using Extentions;
 using Extentions.Menu;
 using Gameplay.Units;
 using Gameplay.Units.Enemy;
+using RunProgress;
 using UnityEngine;
 using Zenject;
 
@@ -12,44 +13,39 @@ namespace Gameplay.Weapon
 {
     public abstract class WeaponBehaviour : Transformable
     {
-        [SerializeField] private WeaponDetails _details;
-
         private Timer _cooldown;
         private OverlapTrigger2D Overlap { get; set; }
-
         private CircleCollider2D Range { get; set; }
 
+        protected virtual float AttackPeriod => Details.AttackPeriod;
+        protected virtual bool AttackCondition => true;
         protected virtual Hit Hit => new Hit(Details.DamagePerAttack);
         public Transform Target { get; private set; }
-        protected WeaponDetails Details => _details;
-        
+        public WeaponDetails Details { get; set; }
+
         [Inject] private Pause Pause { get; set; }
 
         public event Action<Transform> OnAttack; 
 
-        private void Awake()
+        public void Init(PlayerWeapon weapon)
         {
-            Overlap = GetComponent<OverlapTrigger2D>();
-            Range = GetComponent<CircleCollider2D>();
+            Details = weapon.Details;
+            Range.radius = Details.AttackRange;
             _cooldown = new Timer(this, Details.AttackPeriod, Pause);
             _cooldown.Restart();
         }
 
         private bool TryAttack()
         {
-            if (_cooldown.IsOn || Target == null)
+            if (_cooldown.IsOn || Target == null || ! AttackCondition)
                 return false;
             Attack(Target);
             OnAttack?.Invoke(Target);
+            _cooldown.Length = AttackPeriod;
             return true;
         }
 
         protected abstract void Attack(Transform target);
-
-        private void Start()
-        {
-            Range.radius = _details.AttackRange;
-        }
 
         private void FixedUpdate()
         {
@@ -66,9 +62,15 @@ namespace Gameplay.Weapon
                 Target = null;
                 return;
             }
-
+            
             Target = possibleTargets.OrderBy(t =>
-                Vector2.Distance(Transform.position, t.position)).ToArray()[0];
+            Vector2.Distance(Transform.position, t.position)).ToArray()[0];
+        }
+
+        private void Awake()
+        {
+            Overlap = GetComponent<OverlapTrigger2D>();
+            Range = GetComponent<CircleCollider2D>();
         }
     }
 }

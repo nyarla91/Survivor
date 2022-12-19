@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 2578939752270402947}
+  <Renderer>k__BackingField: {fileID: 7619194639482788119}
 --- !u!114 &2033819578469945936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,4 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20728afb137847eda52ad832335dba74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _details: {fileID: 0}
+--- !u!212 &7619194639482788119 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 473668492318480588, guid: d1cf7ebd8e3ad8a4d972b9c5d7b363f8, type: 3}
+  m_PrefabInstance: {fileID: 8011375782416777691}
+  m_PrefabAsset: {fileID: 0}

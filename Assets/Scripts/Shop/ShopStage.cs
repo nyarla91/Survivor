@@ -48,7 +48,6 @@ namespace Shop
                 }
                 _chosenObj = null;
                 yield return new WaitUntil(() => _chosenObj != null);
-                print("Await");
                 ProcessChosenObj(_chosenObj);
             }
             Lazy.blocksRaycasts = false;

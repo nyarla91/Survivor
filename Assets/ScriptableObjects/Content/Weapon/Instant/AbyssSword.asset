@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc9cc202e2f4a829a8d38318cbf6cd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c7dd38771f349f18cc3a00ddb2ff47b, type: 3}
   m_Name: AbyssSword
   m_EditorClassIdentifier: 
   <Behaviour>k__BackingField:
-    m_AssetGUID: ffb0d95b403588c4fa15d8ca8394437f
+    m_AssetGUID: 45817d305859d2c4480d2f2c5d27372c
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   <Sprite>k__BackingField: {fileID: 21300000, guid: 0dfec432e463f3b4ab5f02e57798c41f, type: 3}
-  <Name>k__BackingField: Abyss sword
-  <AbilityDescription>k__BackingField: 
-  <AttackRange>k__BackingField: 0
-  <AttackPeriod>k__BackingField: 0
-  <DamagePerAttack>k__BackingField: 0
+  <Name>k__BackingField: 
+  <AbilityDescription>k__BackingField: Every attack creates abyss zone that pereodically
+    damages nearby enemies. Lasts 3 seconds.
+  <AttackRange>k__BackingField: 2
+  <AttackPeriod>k__BackingField: 0.7
+  <DamagePerAttack>k__BackingField: 20
   <DamageType>k__BackingField: 1
-  <ProjectilesPerShot>k__BackingField: 0
-  <SpreadAngle>k__BackingField: 0
-  <ProjectileSpeed>k__BackingField: 0
+  <AttackSplash>k__BackingField: 0
+  <SplashDamageModifier>k__BackingField: 0

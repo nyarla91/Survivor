@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: ThrowingAxe
   m_EditorClassIdentifier: 
   <Behaviour>k__BackingField:
-    m_AssetGUID: ffb0d95b403588c4fa15d8ca8394437f
+    m_AssetGUID: 69f4e10dfebbdde43bc62aa0c6334bf1
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   <Sprite>k__BackingField: {fileID: 21300000, guid: b5060d70bc459bf43b4e6d2d497996be, type: 3}
   <Name>k__BackingField: Throwing axe
-  <AbilityDescription>k__BackingField: 
-  <AttackRange>k__BackingField: 0
-  <AttackPeriod>k__BackingField: 0
-  <DamagePerAttack>k__BackingField: 0
+  <AbilityDescription>k__BackingField: Throw new axe as soon as previous hit an enemy
+  <AttackRange>k__BackingField: 6
+  <AttackPeriod>k__BackingField: 0.4
+  <DamagePerAttack>k__BackingField: 9.58
   <DamageType>k__BackingField: 0
-  <ProjectilesPerShot>k__BackingField: 0
-  <SpreadAngle>k__BackingField: 0
-  <ProjectileSpeed>k__BackingField: 0
+  <ProjectilesPerShot>k__BackingField: 1
+  <SpreadAngle>k__BackingField: 45
+  <ProjectileSpeed>k__BackingField: 3

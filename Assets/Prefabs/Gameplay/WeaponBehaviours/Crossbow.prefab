@@ -7,13 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3376623486090325084, guid: 9c242082147709645b257c6cacaa3882, type: 3}
+      propertyPath: _prefab
+      value: 
+      objectReference: {fileID: 6665205253424226400, guid: 8e5efd1a71b6c4341ab19c3fa250ba7a, type: 3}
     - target: {fileID: 2033819578469945936, guid: 9c242082147709645b257c6cacaa3882, type: 3}
       propertyPath: _details
       value: 
       objectReference: {fileID: 11400000, guid: eaa2a65b34aff5343b20707defad4d62, type: 2}
     - target: {fileID: 3449013086588785734, guid: 9c242082147709645b257c6cacaa3882, type: 3}
       propertyPath: m_Name
-      value: Staff
+      value: Crossbow
       objectReference: {fileID: 0}
     - target: {fileID: 7466777038933744093, guid: 9c242082147709645b257c6cacaa3882, type: 3}
       propertyPath: m_RootOrder
@@ -63,5 +67,23 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cae304c055e96f2419ec3fbed773c725, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2033819578469945936, guid: 9c242082147709645b257c6cacaa3882, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c242082147709645b257c6cacaa3882, type: 3}
+--- !u!1 &898628389160641374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3449013086588785734, guid: 9c242082147709645b257c6cacaa3882, type: 3}
+  m_PrefabInstance: {fileID: 2568682237361665816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1075594724411304184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898628389160641374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00424487c3e1403ea505a16541427dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

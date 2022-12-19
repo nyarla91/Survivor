@@ -13,7 +13,6 @@ namespace Gameplay.Units.Player
             int health = stats.GetStat("health").Value;
             int shields = stats.GetStat("shields").Value;
             int shieldsRegeneration = stats.GetStat("shields regen").Value;
-            print($"{health} {shields} {shieldsRegeneration}");
             Lazy.VitalsPool.Init(health, shields, shieldsRegeneration);
         }
     }

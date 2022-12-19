@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc9cc202e2f4a829a8d38318cbf6cd1, type: 3}
-  m_Name: Longbow
+  m_Name: Crossbow
   m_EditorClassIdentifier: 
   <Behaviour>k__BackingField:
-    m_AssetGUID: ffb0d95b403588c4fa15d8ca8394437f
+    m_AssetGUID: 93831616bd6eeab479de689cdc613742
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  <Sprite>k__BackingField: {fileID: 21300000, guid: c7ce2941cb0de1b42aab5c667d1ed6c8, type: 3}
-  <Name>k__BackingField: Longbow
-  <AbilityDescription>k__BackingField: 
-  <AttackRange>k__BackingField: 0
-  <AttackPeriod>k__BackingField: 0
-  <DamagePerAttack>k__BackingField: 0
+  <Sprite>k__BackingField: {fileID: 21300000, guid: f60c3170e5b64874c88a032ef81c57ad, type: 3}
+  <Name>k__BackingField: Crossbow
+  <AbilityDescription>k__BackingField: Gains up to 100% attack speed depending experience
+  <AttackRange>k__BackingField: 5
+  <AttackPeriod>k__BackingField: 0.5
+  <DamagePerAttack>k__BackingField: 3
   <DamageType>k__BackingField: 0
-  <ProjectilesPerShot>k__BackingField: 0
-  <SpreadAngle>k__BackingField: 0
-  <ProjectileSpeed>k__BackingField: 0
+  <ProjectilesPerShot>k__BackingField: 3
+  <SpreadAngle>k__BackingField: 45
+  <ProjectileSpeed>k__BackingField: 5

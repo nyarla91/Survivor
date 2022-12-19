@@ -84,6 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6994247da28748ffbb57a1cc838b5534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxTravelDistance: 10
+  _destroyedOnHit: 1
 --- !u!1 &7801881802032985005
 GameObject:
   m_ObjectHideFlags: 0

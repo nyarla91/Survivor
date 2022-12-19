@@ -30,7 +30,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ffb0d95b403588c4fa15d8ca8394437f
-    m_Address: Gameplay/Weapon/Staff
+    m_Address: Gameplay/Weapon/VampireScepter
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 45817d305859d2c4480d2f2c5d27372c
@@ -47,6 +47,26 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 3be3db12b6f4d2a4c881e8f9b6596edc
     m_Address: Scenes/Loading
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3f5a3ddb651f7d1429d241a9819dbdcc
+    m_Address: Gameplay/Weapon/BloodStaff
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6dead09572d979f47b05e83f45a06638
+    m_Address: Gameplay/Weapon/FireWand
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e55998590a7ad554aa156fba023dd30e
+    m_Address: Gameplay/Weapon/Longbow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93831616bd6eeab479de689cdc613742
+    m_Address: Gameplay/Weapon/Crossbow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 69f4e10dfebbdde43bc62aa0c6334bf1
+    m_Address: Gameplay/Weapon/ThrowingAxe
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
