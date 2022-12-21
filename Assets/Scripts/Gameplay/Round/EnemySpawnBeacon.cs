@@ -19,21 +19,13 @@ namespace Gameplay.Round
         
         public async void Init(PoolFactory enemyFactory, PoolFactory experienceFactory, EnemySpawnDetails enemy)
         {
-            Timer delay = new Timer(this, _delay, Pause);
-            delay.Start();
+            Timer delay = new Timer(this, _delay, Pause).Start();
             
             await delay.GetTask();
 
             GameObject prefab = enemy.Enemy;
             EnemyStatus newEnemy = enemyFactory.GetNewObject<EnemyStatus>(Transform.position, prefab, null, prefab.name);
             newEnemy.ExperienceFactory = experienceFactory;
-            PoolDisable();
-        }
-
-        public override void PoolDisable()
-        {
-            
-            base.PoolDisable();
         }
     }
 }

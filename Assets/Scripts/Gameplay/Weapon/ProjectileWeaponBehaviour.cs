@@ -31,7 +31,7 @@ namespace Gameplay.Weapon
                     {
                         float maxAngle = Details.SpreadAngle / 2;
                         float t = i / (Details.ProjectilesPerShot - 1);
-                        angleOffset = Details.SpreadAngle * MathExtentions.EvaluateLine(-maxAngle, maxAngle, t);
+                        angleOffset = MathExtentions.EvaluateLine(-maxAngle, maxAngle, t);
                     }
                     SpawnProjectile(angleOffset);
                 }

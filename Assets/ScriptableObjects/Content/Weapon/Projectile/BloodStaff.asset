@@ -22,9 +22,9 @@ MonoBehaviour:
   <AbilityDescription>k__BackingField: Gains up to 100% attack speed depending on
     missing health
   <AttackRange>k__BackingField: 4
-  <AttackPeriod>k__BackingField: 0.6
-  <DamagePerAttack>k__BackingField: 12
+  <AttackPeriod>k__BackingField: 1.2
+  <DamagePerAttack>k__BackingField: 24
   <DamageType>k__BackingField: 1
   <ProjectilesPerShot>k__BackingField: 1
-  <SpreadAngle>k__BackingField: 45
+  <SpreadAngle>k__BackingField: 15
   <ProjectileSpeed>k__BackingField: 3

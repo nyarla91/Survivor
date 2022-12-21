@@ -48,11 +48,15 @@ namespace Extentions
             Init();
         }
 
-        public void Start()
+        public Timer Start()
         {
             if (Length == 0)
+            {
                 Debug.LogWarning("Timer length is 0");
+                return this;
+            }
             _tickingCoroutine = _container.StartCoroutine(Ticking());
+            return this;
         }
 
         public void Restart()

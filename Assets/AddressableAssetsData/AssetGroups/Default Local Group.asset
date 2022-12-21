@@ -69,6 +69,10 @@ MonoBehaviour:
     m_Address: Gameplay/Weapon/ThrowingAxe
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 55ab428965b3fa64cb25e0ebec526eb3
+    m_Address: Gameplay/Weapon/AbyssSword
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 938109e34fdb9164396dc084d9c0d9d2, type: 2}
   m_SchemaSet:

@@ -19,9 +19,11 @@ namespace Gameplay.Weapon
 
         protected virtual float AttackPeriod => Details.AttackPeriod;
         protected virtual bool AttackCondition => true;
-        protected virtual Hit Hit => new Hit(Details.DamagePerAttack);
+        protected virtual Hit Hit => new Hit(PlayerWeapon.TotalDamagePerAttack);
         public Transform Target { get; private set; }
-        public WeaponDetails Details { get; set; }
+        public PlayerWeapon PlayerWeapon { get; private set; }
+        public int Level => PlayerWeapon.Level;
+        public WeaponDetails Details => PlayerWeapon.Details;
 
         [Inject] private Pause Pause { get; set; }
 
@@ -29,7 +31,7 @@ namespace Gameplay.Weapon
 
         public void Init(PlayerWeapon weapon)
         {
-            Details = weapon.Details;
+            PlayerWeapon = weapon;
             Range.radius = Details.AttackRange;
             _cooldown = new Timer(this, Details.AttackPeriod, Pause);
             _cooldown.Restart();

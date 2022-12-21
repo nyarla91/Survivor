@@ -29,7 +29,8 @@ namespace RunProgress
         public void AddOneExperience()
         {
             _experience.Value++;
-            if ( ! _experience.IsUnfilled)
+            print(324);
+            if (_experience.IsUnfilled)
                 return;
             _experience.Value = 0;
             _experience.MaxValue = (int) _experience.MaxValue * 2f;

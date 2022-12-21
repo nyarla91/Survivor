@@ -25,5 +25,5 @@ MonoBehaviour:
   <DamagePerAttack>k__BackingField: 3
   <DamageType>k__BackingField: 0
   <ProjectilesPerShot>k__BackingField: 3
-  <SpreadAngle>k__BackingField: 45
+  <SpreadAngle>k__BackingField: 10
   <ProjectileSpeed>k__BackingField: 5
