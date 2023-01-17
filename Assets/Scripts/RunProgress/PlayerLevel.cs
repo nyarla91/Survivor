@@ -29,7 +29,6 @@ namespace RunProgress
         public void AddOneExperience()
         {
             _experience.Value++;
-            print(324);
             if (_experience.IsUnfilled)
                 return;
             _experience.Value = 0;

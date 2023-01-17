@@ -2,7 +2,6 @@
 using Content;
 using Extentions;
 using Extentions.Factory;
-using Extentions.Menu;
 using Gameplay.Units.Enemy;
 using UnityEngine;
 using Zenject;

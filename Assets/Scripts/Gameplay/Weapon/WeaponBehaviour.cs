@@ -2,7 +2,6 @@
 using System.Linq;
 using Content;
 using Extentions;
-using Extentions.Menu;
 using Gameplay.Units;
 using Gameplay.Units.Enemy;
 using RunProgress;

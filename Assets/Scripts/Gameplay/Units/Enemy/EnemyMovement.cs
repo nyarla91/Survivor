@@ -1,5 +1,4 @@
 ﻿using Extentions;
-using Extentions.Menu;
 using Gameplay.Units.Player;
 using UnityEngine;
 using Zenject;
@@ -14,6 +13,7 @@ namespace Gameplay.Units.Enemy
         [SerializeField] [Tooltip("The less, the smoother acceleration")] private float _lerpBlend;
 
         private Transform _character;
+        private Vector3 _destination;
         
         [Inject] private Pause Pause { get; set; }
         
@@ -30,8 +30,10 @@ namespace Gameplay.Units.Enemy
                 Lazy.velocity = Vector2.zero;
                 return;
             }
-            
-            float distanceToPlayer = Vector3.Distance(Transform.position.WithZ(0), _character.position.WithZ(0));
+
+            if (_character != null)
+                _destination = _character.position.WithZ(0);
+            float distanceToPlayer = Vector3.Distance(Transform.position.WithZ(0), _destination);
             
             float speed;
             if (distanceToPlayer.ApproximatelyEqual(_preferedDistance,0.5f))
@@ -41,7 +43,7 @@ namespace Gameplay.Units.Enemy
             else
                 speed = -_retreatSpeed;
 
-            Vector2 targetVelocity = Transform.DirectionTo2D(_character) * speed; 
+            Vector2 targetVelocity = Transform.DirectionTo2D(_destination) * speed; 
             Lazy.velocity = Vector2.Lerp(Lazy.velocity, targetVelocity, Time.fixedDeltaTime * _lerpBlend);
         }
     }

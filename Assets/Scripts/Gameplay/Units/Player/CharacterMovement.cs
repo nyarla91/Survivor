@@ -1,7 +1,4 @@
-﻿using System;
-using Extentions;
-using Extentions.Menu;
-using Gameplay.UI;
+﻿using Extentions;
 using Gameplay.UI.Joystick;
 using RunProgress;
 using UnityEngine;

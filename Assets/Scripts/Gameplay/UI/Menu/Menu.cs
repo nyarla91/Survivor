@@ -1,4 +1,4 @@
-﻿using Extentions.Menu;
+﻿using UIUtilities;
 
 namespace Gameplay.UI.Menu
 {

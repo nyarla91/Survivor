@@ -9,8 +9,10 @@ namespace Gameplay.Units.Player
     {
         private VitalsPool _vitalsPool;
         private CharacterMovement _characterMovement;
+        private CharacterStatus _status;
 
         public VitalsPool VitalsPool => _vitalsPool ??= GetComponent<VitalsPool>();
         public CharacterMovement Movement => _characterMovement ??= GetComponent<CharacterMovement>();
+        public CharacterStatus Status => _status ??= GetComponent<CharacterStatus>();
     }
 }

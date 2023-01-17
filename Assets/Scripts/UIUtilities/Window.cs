@@ -1,8 +1,9 @@
 ﻿using System;
+using Extentions;
 using UnityEngine;
 using Zenject;
 
-namespace Extentions.Menu
+namespace UIUtilities
 {
     public class Window : LazyGetComponent<CanvasGroup>
     {

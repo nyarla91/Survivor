@@ -2,7 +2,6 @@
 using Content;
 using Extentions;
 using Extentions.Factory;
-using Extentions.Menu;
 using UnityEngine;
 using Zenject;
 

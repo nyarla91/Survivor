@@ -1,5 +1,4 @@
 ﻿using Extentions;
-using Extentions.Menu;
 using Gameplay.Infrastrucure;
 using Gameplay.Units.Player;
 using UnityEngine;
@@ -21,6 +20,7 @@ namespace Infrastructure
             
             CharacterComposition composition = BindFromPrefab<CharacterComposition>(_characterPrefab, _characterSpawnPoint.position);
             Container.Bind<CharacterMovement>().FromInstance(composition.Movement).AsSingle();
+            Container.Bind<CharacterStatus>().FromInstance(composition.Status).AsSingle();
         }
         
         private T BindFromPrefab<T>(GameObject prefab, Vector3 position, Transform parent = null) where T : Component

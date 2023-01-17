@@ -63,9 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137fd84a386643a4819d0f9966a26529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapons:
-  - <Details>k__BackingField: {fileID: 11400000, guid: 2bbc5a936fb8f4f45bc7790233a6507a, type: 2}
-    <Level>k__BackingField: 1
+  _weapons: []
 --- !u!114 &760902303873188385
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 ﻿using DG.Tweening;
 using Extentions;
-using Extentions.Menu;
 using UnityEngine;
 
 namespace UIUtilities
