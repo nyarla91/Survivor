@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Shop
 {
-    public class NextWaveButton : MonoBehaviour
+    public class NextRoundButton : MonoBehaviour
     {
         [SerializeField] private CanvasGroup _canvasGroup;
         
@@ -16,6 +16,6 @@ namespace Shop
             _canvasGroup.alpha = 1;
         }
 
-        public void LoadGameplay() => RunSceneLoader.JumptoGameplayAsync();
+        public void StartNextRound() => RunSceneLoader.JumptoGameplayAsync();
     }
 }

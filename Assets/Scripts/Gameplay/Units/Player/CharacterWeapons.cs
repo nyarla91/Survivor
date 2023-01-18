@@ -27,6 +27,7 @@ namespace Gameplay.Units.Player
                 Vector3 position = Transform.position + (Vector3) angle.DegreesToVector2() * _weaponsOffset;
                 WeaponBehaviour behaviour = factory.Instantiate<WeaponBehaviour>(prefab, position, Transform);
                 behaviour.Init(weapon);
+                reference.ReleaseAsset();
             }
         }
     }

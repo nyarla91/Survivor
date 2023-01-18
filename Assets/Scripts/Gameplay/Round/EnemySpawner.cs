@@ -2,6 +2,7 @@
 using Content;
 using Extentions;
 using Extentions.Factory;
+using RunProgress;
 using UnityEngine;
 using Zenject;
 
@@ -13,13 +14,15 @@ namespace Gameplay.Round
         [SerializeField] private PoolFactory _enemyFactory;
         [SerializeField] private PoolFactory _experienceFactory;
         [SerializeField] private BoxCollider2D _spawnArea;
-        [SerializeField] private EnemySpawnCycle _cycle;
 
         [Inject] private Pause Pause { get; set; }
+        [Inject] private RunRounds RunRounds { get; set; }
+
+        private EnemySpawnCycle ThisRoundSpawnCycle => RunRounds.CurrentRound.SpawnCycle;
         
         private async void Awake()
         {
-            await _cycle.Load();
+            await ThisRoundSpawnCycle.Load();
         }
 
         private async void Start()
@@ -29,7 +32,7 @@ namespace Gameplay.Round
 
         private IEnumerator Spawn()
         {
-            EnemySpawnDetails[] enemies = _cycle.Enemies;
+            EnemySpawnDetails[] enemies = ThisRoundSpawnCycle.Enemies;
             Timer _spawnTimer = new Timer(this, enemies[0].SpawnDelay, Pause);
             for (int i = 0; i < enemies.Length; i = (i + 1).RepeatIndex(enemies.Length))
             {
@@ -47,7 +50,7 @@ namespace Gameplay.Round
 
         private void OnDestroy()
         {
-            _cycle.Unload();
+            ThisRoundSpawnCycle.Unload();
         }
     }
 }

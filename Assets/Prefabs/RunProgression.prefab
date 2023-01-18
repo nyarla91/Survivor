@@ -147,21 +147,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rounds:
-  - <SpawnCycle>k__BackingField: {fileID: 0}
+  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}
     <WeaponAction>k__BackingField: 0
-    <Length>k__BackingField: 0
-  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <Length>k__BackingField: 20
+  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}
     <WeaponAction>k__BackingField: 0
-    <Length>k__BackingField: 0
-  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <Length>k__BackingField: 25
+  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}
     <WeaponAction>k__BackingField: 0
-    <Length>k__BackingField: 0
-  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <Length>k__BackingField: 25
+  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}
     <WeaponAction>k__BackingField: 0
-    <Length>k__BackingField: 0
-  - <SpawnCycle>k__BackingField: {fileID: 0}
+    <Length>k__BackingField: 30
+  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}
     <WeaponAction>k__BackingField: 1
-    <Length>k__BackingField: 0
+    <Length>k__BackingField: 30
 --- !u!114 &6118757089636119184
 MonoBehaviour:
   m_ObjectHideFlags: 0

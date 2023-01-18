@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Content;
 using RunProgress;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace Shop
 {
@@ -12,7 +14,9 @@ namespace Shop
         [SerializeField] private ShopStage<ModifiedStat> _statStage;
         [SerializeField] private ShopStage<WeaponDetails> _weaponPurchaseStage;
         [SerializeField] private ShopStage<PlayerWeapon> _weaponUpgradeStage;
-        [SerializeField] private NextWaveButton _nextWaveButton;
+        [SerializeField] private NextRoundButton _nextRoundButton;
+        
+        [Inject] private RunRounds RunRounds { get; set; }
         
         private void Start()
         {
@@ -22,11 +26,13 @@ namespace Shop
         private IEnumerator ShopSequence()
         {
             yield return StartStage(_statStage);
-            yield return StartStage(_weaponPurchaseStage);
-            yield return StartStage(_weaponPurchaseStage);
-            yield return StartStage(_weaponPurchaseStage);
-            yield return StartStage(_weaponUpgradeStage);
-            _nextWaveButton.Show();
+            yield return RunRounds.CurrentRound.WeaponAction switch
+            {
+                RoundWeaponAction.Buy => StartStage(_weaponPurchaseStage),
+                RoundWeaponAction.Upgrade => StartStage(_weaponUpgradeStage),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            _nextRoundButton.Show();
         }
 
         private IEnumerator StartStage<T>(ShopStage<T> stage) where T : class

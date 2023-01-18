@@ -52,7 +52,10 @@ namespace Shop
             }
             Lazy.blocksRaycasts = false;
             Lazy.alpha = 0;
+            OnStageEnd();
         }
+
+        protected virtual void OnStageEnd() { }
 
         protected abstract void ProcessChosenObj(T obj);
     }

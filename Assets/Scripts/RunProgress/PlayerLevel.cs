@@ -7,24 +7,10 @@ namespace RunProgress
     public class PlayerLevel : MonoBehaviour
     {
         [SerializeField] private Resource _experience;
-        
-        private int _upgradePoints;
 
         public ResourceFacade Experience => _experience.Facade;
 
-        public int UpgradePoints
-        {
-            get => _upgradePoints;
-            set
-            {
-                if (value == _upgradePoints)
-                    return;
-                _upgradePoints = value;
-                OnLevelChanged?.Invoke(_upgradePoints);
-            }
-        }
-
-        public event Action<int> OnLevelChanged;
+        public int UpgradePoints { get; private set; }
 
         public void AddOneExperience()
         {
@@ -35,5 +21,7 @@ namespace RunProgress
             _experience.MaxValue = (int) _experience.MaxValue * 2f;
             UpgradePoints++;
         }
+
+        public void DiscardPoints() => UpgradePoints = 0;
     }
 }

@@ -845,7 +845,7 @@ MonoBehaviour:
   _statStage: {fileID: 1803377329}
   _weaponPurchaseStage: {fileID: 1217867866}
   _weaponUpgradeStage: {fileID: 584617411}
-  _nextWaveButton: {fileID: 1550135652}
+  _nextRoundButton: {fileID: 1550135652}
 --- !u!1001 &814255290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 1550135653}
   - component: {fileID: 1550135652}
   m_Layer: 5
-  m_Name: NextWaveButton
+  m_Name: NextRoundButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1544,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1550135652}
         m_TargetAssemblyTypeName: Shop.NextWaveButton, Shop
-        m_MethodName: LoadGameplay
+        m_MethodName: StartNextRound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next wave
+  m_text: Next round
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5af6571e5fe615846b31acd2df561f45, type: 2}
   m_sharedMaterial: {fileID: -1232022251266049524, guid: 5af6571e5fe615846b31acd2df561f45, type: 2}
