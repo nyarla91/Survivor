@@ -73,6 +73,10 @@ MonoBehaviour:
     m_Address: Gameplay/Weapon/AbyssSword
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ea529d1654e5b404cac3b1594ae4c79d
+    m_Address: Gameplay/Enemy/Golem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 938109e34fdb9164396dc084d9c0d9d2, type: 2}
   m_SchemaSet:

@@ -6,6 +6,7 @@ namespace RunProgress
 {
     public class PlayerLevel : MonoBehaviour
     {
+        [SerializeField] private float _experienceReqirementAmplification;
         [SerializeField] private Resource _experience;
 
         public ResourceFacade Experience => _experience.Facade;
@@ -18,7 +19,7 @@ namespace RunProgress
             if (_experience.IsUnfilled)
                 return;
             _experience.Value = 0;
-            _experience.MaxValue = (int) _experience.MaxValue * 2f;
+            _experience.MaxValue = (int) _experience.MaxValue * _experienceReqirementAmplification;
             UpgradePoints++;
         }
 

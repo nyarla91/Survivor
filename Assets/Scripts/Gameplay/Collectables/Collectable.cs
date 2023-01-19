@@ -1,5 +1,5 @@
 ﻿using Extentions.Factory;
-using Gameplay.Units.Player;
+using Gameplay.Units.Character;
 using UnityEngine;
 
 namespace Gameplay.Collectables

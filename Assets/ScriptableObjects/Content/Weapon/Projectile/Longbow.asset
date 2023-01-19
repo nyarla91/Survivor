@@ -22,7 +22,7 @@ MonoBehaviour:
   <AbilityDescription>k__BackingField: Pierces enemies
   <AttackRange>k__BackingField: 10
   <AttackPeriod>k__BackingField: 1.5
-  <DamagePerAttack>k__BackingField: 8
+  <DamagePerAttack>k__BackingField: 45
   <DamageType>k__BackingField: 0
   <ProjectilesPerShot>k__BackingField: 1
   <SpreadAngle>k__BackingField: 45

@@ -4,7 +4,7 @@ using RunProgress;
 using UnityEngine;
 using Zenject;
 
-namespace Gameplay.Units.Player
+namespace Gameplay.Units.Character
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class CharacterMovement : LazyGetComponent<CharacterComposition>

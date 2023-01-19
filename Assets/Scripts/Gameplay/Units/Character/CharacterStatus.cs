@@ -3,7 +3,7 @@ using Extentions;
 using RunProgress;
 using Zenject;
 
-namespace Gameplay.Units.Player
+namespace Gameplay.Units.Character
 {
     public class CharacterStatus : LazyGetComponent<CharacterComposition>
     {

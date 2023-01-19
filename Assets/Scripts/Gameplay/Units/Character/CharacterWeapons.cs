@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
 
-namespace Gameplay.Units.Player
+namespace Gameplay.Units.Character
 {
     public class CharacterWeapons : Transformable
     {

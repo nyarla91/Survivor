@@ -1,4 +1,4 @@
-﻿using Gameplay.Units.Player;
+﻿using Gameplay.Units.Character;
 using RunProgress;
 using Zenject;
 

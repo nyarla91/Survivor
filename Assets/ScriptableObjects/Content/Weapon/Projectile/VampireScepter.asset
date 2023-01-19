@@ -23,7 +23,7 @@ MonoBehaviour:
     damage
   <AttackRange>k__BackingField: 5
   <AttackPeriod>k__BackingField: 0.25
-  <DamagePerAttack>k__BackingField: 1
+  <DamagePerAttack>k__BackingField: 12
   <DamageType>k__BackingField: 1
   <ProjectilesPerShot>k__BackingField: 5
   <SpreadAngle>k__BackingField: 35

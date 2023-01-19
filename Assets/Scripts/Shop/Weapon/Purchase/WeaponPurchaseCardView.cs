@@ -12,8 +12,8 @@ namespace Shop.Weapon.Purchase
             text += $"Cooldown: <color=#00ff00ff>{item.AttackPeriod}</color>\n";
             text += $"Range: <color=#00ffffff>{item.AttackRange}</color>\n \n";
             text += $"{item.AbilityDescription}\n \n";
-            text += $"{(item is ProjectileWeaponDetails ? "Melee" : "Ranged")}, ";
-            text += $"{(item.DamageType == DamageType.Magic ? "Melee" : "Ranged")}";
+            text += $"{(item is InstantWeaponDetails ? "Melee" : "Ranged")}, ";
+            text += $"{(item.DamageType == DamageType.Magic ? "Magic" : "Physical")}";
             return text;
         }
 

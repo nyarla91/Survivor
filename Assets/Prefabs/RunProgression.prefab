@@ -49,8 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39391624ed104b9db1ab77801c1b8253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _experienceReqirementAmplification: 1.15
   _experience:
-    _maxValue: 1
+    _maxValue: 10
 --- !u!114 &6986418190527078285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +100,13 @@ MonoBehaviour:
         _icon: {fileID: 21300000, guid: 0fce9b957f1b31c4e926da3b3374aced, type: 3}
         _startingValue: 1
         _amplificationPerLevel: 1
+    - _key: movement speed
+      _value:
+        _displayName: Movement Speed
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: 3087b24f1e4a6d540abd180970461c89, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 25
     - _key: damage
       _value:
         _displayName: Damage
@@ -120,20 +128,20 @@ MonoBehaviour:
         _icon: {fileID: 21300000, guid: 6c2e9719a65190c40a3e264f7e7aa1bd, type: 3}
         _startingValue: 100
         _amplificationPerLevel: 50
-    - _key: fire damage
+    - _key: physical damage
       _value:
-        _displayName: Fire damage
+        _displayName: Physical damage
+        _displaySuffix: '%'
+        _icon: {fileID: 21300000, guid: 8b6897048b75487478358afd600263f1, type: 3}
+        _startingValue: 100
+        _amplificationPerLevel: 50
+    - _key: magic damage
+      _value:
+        _displayName: Magic damage
         _displaySuffix: '%'
         _icon: {fileID: 21300000, guid: 2617b2e8b460ea841a127ff82543c8be, type: 3}
         _startingValue: 100
         _amplificationPerLevel: 50
-    - _key: movement speed
-      _value:
-        _displayName: Movement Speed
-        _displaySuffix: '%'
-        _icon: {fileID: 21300000, guid: 3087b24f1e4a6d540abd180970461c89, type: 3}
-        _startingValue: 100
-        _amplificationPerLevel: 25
 --- !u!114 &1049401871410227617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rounds:
-  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}
+  - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: fbc95a9f5ff5d4a448bb3a55c03c0b5d, type: 2}
     <WeaponAction>k__BackingField: 0
     <Length>k__BackingField: 20
   - <SpawnCycle>k__BackingField: {fileID: 11400000, guid: d710474c997356d42a1aa55b89aff4da, type: 2}

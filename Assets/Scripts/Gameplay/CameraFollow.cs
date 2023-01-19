@@ -1,5 +1,5 @@
 ﻿using Extentions;
-using Gameplay.Units.Player;
+using Gameplay.Units.Character;
 using UnityEngine;
 using Zenject;
 

@@ -18,13 +18,27 @@ namespace Gameplay.Weapon
 
         protected virtual float AttackPeriod => Details.AttackPeriod;
         protected virtual bool AttackCondition => true;
-        protected virtual Hit Hit => new Hit(PlayerWeapon.TotalDamagePerAttack);
+        public bool IsProjectileWeapon { get; private set; }
+        protected float CountedDamagePerAttack
+        {
+            get
+            {
+                float damage = PlayerWeapon.TotalDamagePerAttack;
+                damage *= Stats.GetStat("damage").PercentValue;
+                damage *= Stats.GetStat(IsProjectileWeapon ? "ranged damage" : "melee damage").PercentValue;
+                damage *= Stats.GetStat(Details.DamageType == DamageType.Magic ? "magic damage" : "physical damage").PercentValue;
+                return damage;
+            }
+        }
+
+        protected virtual Hit Hit => new Hit(CountedDamagePerAttack);
         public Transform Target { get; private set; }
         public PlayerWeapon PlayerWeapon { get; private set; }
         public int Level => PlayerWeapon.Level;
         public WeaponDetails Details => PlayerWeapon.Details;
 
         [Inject] private Pause Pause { get; set; }
+        [Inject] private PlayerStats Stats { get; set; }
 
         public event Action<Transform> OnAttack; 
 
@@ -33,6 +47,7 @@ namespace Gameplay.Weapon
             PlayerWeapon = weapon;
             Range.radius = Details.AttackRange;
             _cooldown = new Timer(this, Details.AttackPeriod, Pause);
+            IsProjectileWeapon = !(this is InstantWeaponBehaviour);
             _cooldown.Restart();
         }
 

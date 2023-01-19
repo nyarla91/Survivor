@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c634e0c76874e1c81ac001284a036d4, type: 3}
+  m_Name: Round3
+  m_EditorClassIdentifier: 
+  _enemies:
+  - _enemyReference:
+      m_AssetGUID: 270e57d72fd77a847938cec19229aa97
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    <SpawnDelay>k__BackingField: 0.1
+    <Count>k__BackingField: 4
+  - _enemyReference:
+      m_AssetGUID: 496e99df95d41e8428d507a1e337d753
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    <SpawnDelay>k__BackingField: 0.2
+    <Count>k__BackingField: 1
+  - _enemyReference:
+      m_AssetGUID: ea529d1654e5b404cac3b1594ae4c79d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    <SpawnDelay>k__BackingField: 1
+    <Count>k__BackingField: 1

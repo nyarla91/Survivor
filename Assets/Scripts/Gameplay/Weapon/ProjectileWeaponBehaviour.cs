@@ -12,7 +12,7 @@ namespace Gameplay.Weapon
         private PoolFactory _projectilesFactory;
 
         private PoolFactory ProjectilesFactory => _projectilesFactory ??= GetComponent<PoolFactory>();
-        protected override Hit Hit => new Hit(Details.DamagePerAttack / Details.ProjectilesPerShot);
+        protected override Hit Hit => new Hit(CountedDamagePerAttack / Details.ProjectilesPerShot);
         protected new ProjectileWeaponDetails Details => ((ProjectileWeaponDetails) base.Details);
 
         protected override void Attack(Transform target)

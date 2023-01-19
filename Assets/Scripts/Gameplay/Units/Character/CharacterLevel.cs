@@ -1,7 +1,7 @@
 ﻿using Extentions;
 using UnityEngine;
 
-namespace Gameplay.Units.Player
+namespace Gameplay.Units.Character
 {
     public class CharacterLevel : MonoBehaviour
     {

@@ -4,9 +4,9 @@ using RunProgress;
 using UnityEngine;
 using Zenject;
 
-namespace Gameplay.Units.Player
+namespace Gameplay.Units.Character
 {
-    public class PlayerBootstrap : MonoBehaviour
+    public class CharacterBootstrap : MonoBehaviour
     {
         [SerializeField] private ResourceBar _healthBar;
         [SerializeField] private ResourceBar _shieldBar;
